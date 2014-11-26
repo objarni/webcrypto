@@ -15,7 +15,7 @@ def encrypt(cleartext, crypto):
     # decrypt with brute-force.
     # Note: this is only an hypothesis that remains to be proven
     # or disproven by my Facebook friends ;)
-    assert len(crypto) * 0.75 > len(cleartext)
+    assert len(crypto) * 0.50 > len(cleartext)
     bytes = rolling_xor(cleartext, crypto)
     return base64.b64encode(bytes)
 
