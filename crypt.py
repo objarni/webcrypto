@@ -2,7 +2,7 @@ import base64
 
 
 def rolling_xor(string, crypto):
-    crypto = (crypto*100)[:len(string)]
+    crypto = (crypto*2)[:len(string)]
     assert len(string) == len(crypto)
     assert type(string) == str
     assert type(crypto) == str
@@ -15,7 +15,8 @@ def encrypt(cleartext, crypto):
     # decrypt with brute-force.
     # Note: this is only an hypothesis that remains to be proven
     # or disproven by my Facebook friends ;)
-    assert len(crypto) >= len(cleartext) * 0.50
+    if len(crypto) < len(cleartext) * 0.50:
+        raise ValueError('Crypto must be at least 50%% of cleartext length')
     bytes = rolling_xor(cleartext, crypto)
     return base64.b64encode(bytes)
 
