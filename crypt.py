@@ -10,6 +10,12 @@ def rolling_xor(string, crypto):
 
 
 def encrypt(cleartext, crypto):
+    # We want a strong encryption - a crypto comparable in length
+    # to the cleartext ensures that no statistical method can
+    # decrypt with brute-force.
+    # Note: this is only an hypothesis that remains to be proven
+    # or disproven by my Facebook friends ;)
+    assert len(crypto) * 0.75 > len(cleartext)
     bytes = rolling_xor(cleartext, crypto)
     return base64.b64encode(bytes)
 
