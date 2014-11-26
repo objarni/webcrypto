@@ -3,7 +3,6 @@ import base64
 
 def rolling_xor(string, crypto):
     crypto = (crypto*2)[:len(string)]
-    assert len(string) == len(crypto)
     assert type(string) == str
     assert type(crypto) == str
     return b''.join(chr(ord(a) ^ ord(b)) for (a, b) in zip(string, crypto))
