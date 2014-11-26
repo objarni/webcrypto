@@ -11,4 +11,4 @@ Run
 ---
 Assuming there is a file "secret.py" containing two byte string constants CLEARTEXT and CRYPTO, you can test encrypting and decrypting CLEARTEXT using:
 
-  python main.py
+    python main.py
