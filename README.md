@@ -25,7 +25,7 @@ For example, if secret.py contains these two lines:
 
 .. then you should get this output:
 
-	15:30 olof@buck:/home/olof/prj/objarni/webcrypto> python main.py
+	$ python main.py
 	cleartext This is some unencrypted text.
 	encrypted GRFJAFUZFlJTHAgGUhAaRQ8NFlkGERcdABgKFhMO
 	decrypted This is some unencrypted text.
